@@ -12,12 +12,17 @@ function getGridSize(){
             let square = document.createElement('div');
             square.className = "square";
             row.appendChild(square);
+            square.addEventListener('mouseover', () =>{
+                square.style.background = 'black';
+            })
         }
         grid.appendChild(row);  
     }
 }
 
 getGridSize();
+
+
 //To make grid: Use double for loop, addEventListener for click/mouse button up
 
 //Get userChoice. Use either prompt or add divs with DOM manipulation

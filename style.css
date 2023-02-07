@@ -1,10 +1,10 @@
 #grid{
     display:flex;
     justify-content: center;
-    padding: 5px;
+    padding: 2px;
 }
 
 .square{
-    padding: 40px;
+    padding: 7px;
     border: 1px solid;
 }
