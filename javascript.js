@@ -5,12 +5,10 @@ const grid = document.querySelector('#grid');
 function getGridSize(){
     let gridHeight = prompt("Enter grid height: ");
     let gridWidth = prompt("Enter grid width: ");
-    console.log(gridHeight);
-    console.log(gridWidth);
-    for(let i = 0; i < gridHeight; i++){
+    for(let i = 0; i < gridWidth; i++){
         let row = document.createElement('div');
         row.className = "row";
-        for (let j = 0; j < gridWidth; j++){
+        for (let j = 0; j < gridHeight; j++){
             let square = document.createElement('div');
             square.className = "square";
             row.appendChild(square);
