@@ -9,19 +9,36 @@ clearBtn.textContent = "Clear";
 let gridHeight = 64;
 let gridWidth = 64;
 
-sizeBtn.addEventListener('click', () =>{
-    let gridHeight = prompt("Enter grid height: ");
-    let gridWidth = prompt("Enter grid width: ");
+sizeBtn.addEventListener('click', () =>{        //Grid size button
+    clearGrid();
     getGridSize(gridHeight, gridWidth);
 })
 
-clearBtn.addEventListener('click', () => {
+clearBtn.addEventListener('click', () => {      //Clear button
     clearGrid();
-    getGridSize(64, 64)
+    makeGrid();
 })
 
+function getGridSize(){
+    let gridHeight = prompt("Enter grid height: ");
+    do{ //Check for max height
+        if (gridHeight > 100){
+            gridHeight = prompt("Re-enter grid height (Max 100): ");
+        }
+    } while (gridHeight > 100)
+    
+    let gridWidth = prompt("Enter grid width: ");
+    do{ //Check for max width
+        if (gridWidth > 100){
+            gridWidth = prompt("Re-enter grid Width (Max 100): ");
+        }
+    } while (gridWidth > 100)
+    makeGrid(gridHeight, gridWidth);
+}
+
 //User enters grid height and width
-function getGridSize(gridHeight, gridWidth){
+function makeGrid(gridHeight, gridWidth){
+    
     for(let i = 0; i < gridWidth; i++){
         let row = document.createElement('div');
         row.className = "row";
@@ -36,6 +53,8 @@ function getGridSize(gridHeight, gridWidth){
         grid.appendChild(row);  
     }
 }
+
+
 
 function clearGrid(){
     grid.innerHTML = '';        //Clears all the html within grid
