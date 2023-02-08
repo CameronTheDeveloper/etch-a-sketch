@@ -16,8 +16,6 @@ body{
     display: flex;
     justify-content: center;
     padding: 15px;
-   
- 
 }
 
 .square{
@@ -48,11 +46,3 @@ button{
     border-radius: 5px;
     font-weight: 600;
 }
-
-/*
-    To keep grid the same size: 
-    Change square size not grid size. Use flex to change square size.
-*/
-
-
-

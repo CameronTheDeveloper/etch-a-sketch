@@ -34,11 +34,16 @@ function makeGrid(gridHeight, gridWidth){
         let row = document.createElement('div');
         row.className = "row";
         for (let j = 0; j < gridHeight; j++){
+            let RGB1 = Math.floor(Math.random() * 256);
+            console.log(RGB1);
+            let RGB2 = Math.floor(Math.random() * 256);
+            let RGB3 = Math.floor(Math.random() * 256);
             let square = document.createElement('div');
             square.className = "square";
             row.appendChild(square);
             square.addEventListener('mouseover', () =>{
-                square.style.background = 'black';
+                square.style.background = "rgb(" + RGB1 + "," + RGB2 + "," + RGB3 + ")";  
+                //square.style.background = "rgb(" + 200 + "," + 200 + "," + 200 + ")";  
             })
         }
         grid.appendChild(row);  
