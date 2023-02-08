@@ -3,7 +3,7 @@ const grid = document.querySelector('#grid');
 
 const sizeBtn = document.querySelector('#sizeBtn');
 const clearBtn = document.querySelector('#clearBtn');
-sizeBtn.textContent = "Click here to enter grid size";
+sizeBtn.textContent = "Change grid size";
 clearBtn.textContent = "Clear";
 
 
@@ -49,8 +49,8 @@ function clearGrid(){
     grid.innerHTML = '';        //Clears all the html within grid
 }
 
-let gridHeight = getGridHeight();
-let gridWidth = getGridWidth();
+let gridHeight = 32;
+let gridWidth = 32;
 
 sizeBtn.addEventListener('click', () =>{        //Grid size button
     clearGrid();
