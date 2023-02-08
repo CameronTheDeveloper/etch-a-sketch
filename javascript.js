@@ -34,7 +34,6 @@ function getGridWidth(){
             gridWidth = prompt("Re-enter grid Width (Max 100): ");
         }
     } while (gridWidth > 100)
-    makeGrid(gridHeight, gridWidth);
     return gridWidth;
 }
 
