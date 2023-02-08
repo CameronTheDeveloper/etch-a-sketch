@@ -1,5 +1,5 @@
 #grid{
-    display:flex;
+    display: flex;
     justify-content: center;
     padding: 15px;
 }
@@ -20,11 +20,15 @@ button{
 }
 
 /*
-    Change grid size not square size. Use flex to change square size.
+    To keep grid the same size: 
+    Change square size not grid size. Use flex to change square size.
 */
 
 
 /*
-    To erase the board, use a class change.
+    Erase board possible solutions:
+
+    1. Change class for squares when colored. Change class back when erased.
+    2. Same ideas 1., but instead of changing classes back, clear html classes for color.
 */
 

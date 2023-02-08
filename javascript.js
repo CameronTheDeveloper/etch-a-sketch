@@ -6,27 +6,28 @@ const clearBtn = document.querySelector('#clearBtn');
 sizeBtn.textContent = "Click here to enter grid size";
 clearBtn.textContent = "Clear";
 
-let gridHeight = 64;
-let gridWidth = 64;
-
 sizeBtn.addEventListener('click', () =>{        //Grid size button
     clearGrid();
-    getGridSize(gridHeight, gridWidth);
+    getGridHeight();
+    getGridWidth();
 })
 
 clearBtn.addEventListener('click', () => {      //Clear button
-    clearGrid();
+    clearGrid(gridHeight, gridWidth);
     makeGrid();
 })
 
-function getGridSize(){
+function getGridHeight(){
     let gridHeight = prompt("Enter grid height: ");
     do{ //Check for max height
         if (gridHeight > 100){
             gridHeight = prompt("Re-enter grid height (Max 100): ");
         }
     } while (gridHeight > 100)
-    
+    return gridHeight;
+}
+
+function getGridWidth(){
     let gridWidth = prompt("Enter grid width: ");
     do{ //Check for max width
         if (gridWidth > 100){
@@ -34,11 +35,11 @@ function getGridSize(){
         }
     } while (gridWidth > 100)
     makeGrid(gridHeight, gridWidth);
+    return gridWidth;
 }
 
 //User enters grid height and width
 function makeGrid(gridHeight, gridWidth){
-    
     for(let i = 0; i < gridWidth; i++){
         let row = document.createElement('div');
         row.className = "row";
@@ -54,18 +55,11 @@ function makeGrid(gridHeight, gridWidth){
     }
 }
 
-
-
-function clearGrid(){
+function clearGrid(gridHeight, gridWidth){
     grid.innerHTML = '';        //Clears all the html within grid
+    makeGrid(gridHeight, gridWidth);
 }
 
-
-getGridSize(gridHeight, gridWidth);
-
-//getGridSize(gridHeight, gridWidth);
-
-
-//To make grid: Use double for loop, addEventListener for click/mouse button up
-
-//Get userChoice. Use either prompt or add divs with DOM manipulation
+let gridHeight = getGridHeight();
+let gridWidth = getGridWidth();
+makeGrid(gridHeight, gridWidth);
