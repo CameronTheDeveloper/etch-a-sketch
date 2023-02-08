@@ -6,16 +6,7 @@ const clearBtn = document.querySelector('#clearBtn');
 sizeBtn.textContent = "Click here to enter grid size";
 clearBtn.textContent = "Clear";
 
-sizeBtn.addEventListener('click', () =>{        //Grid size button
-    clearGrid();
-    getGridHeight();
-    getGridWidth();
-})
 
-clearBtn.addEventListener('click', () => {      //Clear button
-    clearGrid(gridHeight, gridWidth);
-    makeGrid();
-})
 
 function getGridHeight(){
     let gridHeight = prompt("Enter grid height: ");
@@ -54,11 +45,25 @@ function makeGrid(gridHeight, gridWidth){
     }
 }
 
-function clearGrid(gridHeight, gridWidth){
+function clearGrid(){
     grid.innerHTML = '';        //Clears all the html within grid
-    makeGrid(gridHeight, gridWidth);
 }
 
 let gridHeight = getGridHeight();
 let gridWidth = getGridWidth();
+
+sizeBtn.addEventListener('click', () =>{        //Grid size button
+    clearGrid();
+    gridHeight = getGridHeight();
+    gridWidth = getGridWidth();
+    makeGrid(gridHeight, gridWidth);
+})
+
+clearBtn.addEventListener('click', () => {      //Clear button
+    clearGrid();
+    makeGrid(gridHeight, gridWidth);
+})
+
 makeGrid(gridHeight, gridWidth);
+
+//Conditional for if grid is cleared
